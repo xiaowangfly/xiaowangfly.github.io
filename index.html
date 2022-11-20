@@ -1,0 +1,34 @@
+<html>  
+<head>  
+</head>  
+<title>XiaowangFly's web of sever</title>
+<img src="https://xiaowangfly.github.io/img/Xiaowang.bmp">
+<h1>小王Fly</h1>
+<body>  
+<div id='div1'></div>  
+<script type="text/javascript">
+var count=0;    
+var typingtext="你好呀，我是小王Fly<br>欢迎来到我的网站服务器！<br>你可以去B站找到我哦！";  
+  
+var myBlock=document.getElementById('div1');  
+
+function type(){  
+ if(count<=typingtext.length){  
+ myBlock.innerHTML=typingtext.substring(0,count);  
+ count++;  
+ }
+ else
+ {  
+ window.clearInterval(intervalID);
+ }  
+}  
+var intervalID=window.setInterval(type,20);  
+</script>  
+<a href="https://space.bilibili.com/2026207523">
+<h3>小王Fly的B站主页</h3>
+</a>
+<a href="https://xiaowangfly.github.io/html/demo.html">
+<h2>猜猜这是什么?</h2>    
+</a>
+</body>
+</html>  
