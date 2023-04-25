@@ -1,54 +1,56 @@
-<html>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XiaowangFly's website</title>
+    <link rel="shortcut icon" href="https://xiaowangfly.github.io/img/ico.ico">
+    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="js/type.js">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+</head>
+<div class="dropdown">
+  <button class="dropbtn">菜单</button>
+  <div class="dropdown-content">
+    <a href="https://space.bilibili.com/2026207523">小王Fly的Bilibili</a>
+    <a href="./html/666.html">666图片</a>
+    <a href="./html/Rick.html">诈骗</a>
+    <a href="./html/vd.html">病毒下载（需要密码）</a>
+    <a href="./html/FriendLink.html">友链</a>
+  </div>
+</div>
+<h6></h6>
+<body style="text-align: center;">
 
-<head>  
-
-</head> 
-
-<title>XiaowangFly's website of sever</title>
-<link rel="shortcut icon" href="https://xiaowangfly.github.io/img/ico.ico">
-
-<img src="https://xiaowangfly.github.io/img/Xiaowang.bmp">
-
-<h1>XiaowangFly</h1>
-
-<body>  
-
-<div id='div1'></div>  
-
-<script type="text/javascript">
-
-var count=0;    
-var typingtext="Hello!I'm xiaowangfly<br>Welcome to my website sever<br>You can call me at bilibili,youtube,discord<br>My youtube:@xiaowangfly<br>My discrod name:xiaowangfly #1237<br>My github name is xiaowangfly too!<br><br>I like usually to upload my website!";  
+<script src="./js/jquery.js"></script>
+<script src="./js/click.js"></script>
+  <style>
+    button{
+      text-align: left;
+    }
+  </style>
+    <style> 
+        body {
+          background:url("background/1.png")  no-repeat center center;
+          background-size:cover;
+          background-attachment:fixed;
+        }
+       </style>  
+  <span id="element"></span>
+<style>
+  span{
+    color:white;
+    font-size: 32px;
+    user-select: none;
+  }
   
-var myBlock=document.getElementById('div1');  
-
-function type(){  
- if(count<=typingtext.length){  
- myBlock.innerHTML=typingtext.substring(0,count);  
- count++;  
- }
- else
- {  
- window.clearInterval(intervalID);
- }  
-}  
-var intervalID=window.setInterval(type,10);  
-</script>  
-
-<a href="https://space.bilibili.com/2026207523">
-<h3>XiaowangFly's Bilibili</h3>
-</a>
-
-<a href="https://xiaowangfly.github.io/html/666.html">
-<h2>Guess what's this</h2>    
-</a>
-
-<a href="https://xiaowangfly.github.io/html/Rick.html">
-<button>Don't click me!</button>
-</a>
-<h2> </h2>
-<a href="https://xiaowangfly.github.io/html/vd.html">
-<button>Virus Download</button>
-</a>
+</style>
+  <!-- Load library from the CDN -->
+  <script src="./js/typed.js"></script>
+  <script>
+        var typed = new Typed('#element', {strings: ["XiaowangFly's website<br>一个写Bug的六年级学生"],typeSpeed: 20,cursorChar:"_",scope:[]});
+  </script>  
 </body>
+</html>
 
