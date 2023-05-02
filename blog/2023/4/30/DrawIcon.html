@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画图标</title>
+</head>
+<body>
+    <style> 
+        body {
+          background:url("../../../../Background/1.png")  no-repeat center center;
+          background-size:cover;
+          background-attachment:fixed;
+        }
+       </style> 
+         <span id="element"></span>
+         <style>
+           span{
+             color:white;
+             font-size: 32px;
+             user-select: none;
+           }
+             h1{
+        color: white;
+      }
+      h3{
+        color: white;
+      }
+      h4{
+        color:white;    
+      }
+      h6{
+        color: white;
+      }
+      
+           
+         </style>
+         <script type="text/javascript" color="255,255,255" opacity='100.0' count="500" src="../../../../js/canvas_nest.js"></script>
+
+         <script src="../../../../js/jquery.js"></script>
+         <script src="../../../../js/click.js"></script>
+           <!-- Load library from the CDN -->
+           <script src="../../../../js/typed.js"></script>
+           <script>
+                 var typed = new Typed('#element', {strings: ["教你用C++画图标"],typeSpeed: 20,cursorChar:"_",scope:[]});
+           </script>
+           <h6><br></h6>
+           <h3>首先我们认识几个函数以及填法</h3>
+           <h4>HDC GetDC(HWND hWnd);</h4>
+           <h4>BOOL GetCursorPos(LPPOINT lpPoint);</h4>
+           <h4>BOOL DrawIcon(HDC hDC,int X,int Y,HICON hIcon)</h4>
+           <h4>HANDLE CreateThread(LPSECURITY_ATTRIBUTES lpThreadAttributes,SIZE_T dwStackSize,LPTHREAD_START_ROUTINE lpStartAddress,LPVOID lpParameter,DWORD dwCreationFlags,LPDWORD lpThreadId)</h4>
+           <h4>BOOL DrawIconEx(HDC hdc,int xLeft,int yTop,HICON hIcon,int cxWidth,int cyWidth,UNIT istepIfAniCur,HBRUSH hbrFlickerFreeDraw,UNIT diFlags)</h4>
+           <h6><br></h6>
+           <h3>具体填法</h3>
+           <h4>HDC hdc = GetDC(0);</h4>
+           <h4>POINT point;(为下面做准备)</h4>
+           <h4>GetCursorPos(&point);</h4>
+           <h4>DWORD WINAPI DrawError(LPVOID lpParameter){}</h4>
+           <h4>CreateThread(NULL,NULL,DeawError,NULL,NULL,NULL);</h4>
+           <h4>DrawIconEx(hdc,rand() % GetSystemMetrics(0),rand() % GetSystemMetrics(1),LoadIcon(NULL,IDI_ERROR),rand() % GetSystemMetrics(0),NULL,NULL,DI_NORMAL);</h4>
+           <h6><br></h6>
+           <h3>random函数</h3>
+          <h4>HCRYPTPROV prov;</h4>
+          <h4>int random() {</h4>
+          <h4>if (prov == NULL)</h4>
+          <h4>if (!CryptAcquireContext(&prov, NULL, NULL, PROV_RSA_FULL, CRYPT_SILENT | CRYPT_VERIFYCONTEXT))</h4>
+          <h4>ExitProcess(1);</h4>
+          <h4>int out;</h4>
+          <h4>CryptGenRandom(prov, sizeof(out), (BYTE*)(&out));</h4>
+          <h4>return out & 0x7fffffff;</h4>
+          <h4>}</h4>
+          <script src="../../../../js/clipboard.js"></script>
+          <script src="../../../../js/jquery3.js"></script>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+          <div><span id="btn" data-clipboard-text="
+            #include<Windows.h>
+            #include<stdlib.h>
+            #include<iostream>
+            
+            POINT point;
+            
+            HDC hdc = GetDC(0);
+            
+            HCRYPTPROV prov;
+            
+            int random() {
+            if (prov == NULL)
+            if (!CryptAcquireContext(&prov, NULL, NULL, PROV_RSA_FULL, CRYPT_SILENT | CRYPT_VERIFYCONTEXT))
+            ExitProcess(1);
+            
+            int out;
+            CryptGenRandom(prov, sizeof(out), (BYTE*)(&out));
+            return out & 0x7fffffff;
+            }
+            
+            DWORD WINAPI DrawError1(LPVOID lpParameter) {
+            while (true)
+            {
+            GetCursorPos(&point);
+            DrawIcon(hdc, point.x, point.y, LoadIcon(NULL, IDI_ERROR));
+            }
+            }
+            
+            DWORD WINAPI DrawError2(LPVOID lpParameter) {
+            while (true)
+            {
+            GetCursorPos(&point);
+            DrawIcon(hdc, point.x, point.y, LoadIcon(NULL, MAKEINTRESOURCE(32512 + random() % 7)));
+            }
+            }
+            
+            DWORD WINAPI DrawError3(LPVOID lpParameter) {
+            while (true)
+            {
+            DrawIcon(hdc, random() % GetSystemMetrics(0), random() % GetSystemMetrics(1), LoadIcon(NULL, MAKEINTRESOURCE(32512 + random() % 7)));
+            }
+            }
+            
+            
+            DWORD WINAPI DrawError4(LPVOID lpParameter) {
+            while (true)
+            {
+            DrawIconEx(hdc, random() % GetSystemMetrics(0), random() % GetSystemMetrics(1), LoadIcon(NULL, MAKEINTRESOURCE(32512 + random() % 7)), random() % GetSystemMetrics(0), random() % GetSystemMetrics(1), NULL, NULL, DI_NORMAL);
+            }
+            }
+            
+            
+            
+            
+            int main() {
+            CreateThread(NULL, NULL, DrawError1, NULL, NULL, NULL);
+            CreateThread(NULL, NULL, DrawError2, NULL, NULL, NULL);
+            CreateThread(NULL, NULL, DrawError3, NULL, NULL, NULL);
+            CreateThread(NULL, NULL, DrawError4, NULL, NULL, NULL);
+            Sleep(INFINITE);
+            }">
+            单击复制完整代码
+          </span>
+        </div>
+          <script>
+            var btn=document.getElementById('btn');
+            var clipboard=new Clipboard(btn);
+            clipboard.on('success', function(e){
+              $('#show').slideDown().delay(1500).slideUp(300);
+              console.log(e);
+            });
+            clipboard.on('error', function(e){
+              $('#show').slideDown().delay(1500).slideUp(300);
+              console.log(e);
+            });
+          </script>
+          </body>
+</html>
