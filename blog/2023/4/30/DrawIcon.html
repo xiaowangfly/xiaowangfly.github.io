@@ -145,6 +145,7 @@
             clipboard.on('success', function(e){
               $('#show').slideDown().delay(1500).slideUp(300);
               console.log(e);
+            alert("已复制");
             });
             clipboard.on('error', function(e){
               $('#show').slideDown().delay(1500).slideUp(300);
