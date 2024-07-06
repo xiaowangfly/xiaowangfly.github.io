@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Answer</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 </head>
 
 <body>
-    如下为校准实例：<br>
+    <a href=""><h3 id="refresh">如果你无法看到以下公式，请点击我，刷新页面</h3></a>
+    <script>
+        $("#refresh").click(function(){
+            window.location.reload();
+        }
+
+        )
+    </script>
+    如下为校准示例：<br>
     <h3>1.方程组：</h3><br>
     <div>
         \(\begin{cases}
