@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Answer</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="./MathJax.js?config=AM_HTMLorMML-full"></script>
+</head>
+
+<body>
+    <a href=""><h3 id="refresh">如果你无法看到公式，请点击我，刷新页面</h3></a>
+    <script>
+        $("#refresh").click(function(){
+            window.location.reload();
+        }
+
+        )
+    </script>
+    测试公式：<br>
+    <div>
+        \(\begin{cases}
+        x + y = 2 \\
+        2x - y = 1
+        \end{cases}\)
+    </div>
+    <p>解是：</p>
+    <div>
+        \(\begin{cases}
+        x = 1 \\
+        y = 1
+        \end{cases}\)
+    </div><br>
+    <h4>`sqrt(2)`</h4><br>
+    <h4>`root(3)(2)`</h4><br><br><br>
+    下面是正确答案：<br>
+    
+</body>
+</html>
