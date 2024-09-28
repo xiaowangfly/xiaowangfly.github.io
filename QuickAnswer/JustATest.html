@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        if (window.navigator.userAgent.toLowerCase().indexOf("vpn") != -1) {
+            alert("您正在使用 VPN 服务，请关闭后再访问该网站。");
+            window.location.href = "https://www.google.com"; // 这里将您的网站链接换成您要重定向的链接。
+        }
+        else
+        {
+            alert(window.navigator.userAgent.toLowerCase());
+        }
+        </script>
+        
+</body>
+</html>
