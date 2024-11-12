@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>人机验证</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Website">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XiaowangFly&#39;s Website">
+<meta property="og:url" content="http://xiaowangfly.github.io/index.html">
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<meta property="og:site_name" content="XiaowangFly&#39;s Website">
+<meta property="og:description" content="Website">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Xiaowangfly">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="XiaowangFly's Website" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+<body>
+  
+    <div id="container">
+      <div id="wrap">
+        <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer" class="outer">
+      <div id="header-title" class="inner">
+        <h1 id="logo-wrap">
+          <a href="/" id="logo">XiaowangFly&#39;s Website</a>
+        </h1>
+        
+          <h2 id="subtitle-wrap">
+            <a href="/" id="subtitle">XiaowangFly</a>
+          </h2>
+        
+      </div>
+  </header>
+  <h2>请输入验证码以获取领取资源的资格</h2>
+  <style>
+    .captcha-container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .captcha-input {
+        height: 43px;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .captcha-canvas {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .captcha-button {
+        margin-top: 10px;
+    }
+</style>
+    <div class="captcha-container">
+        <input type="text" id="text" class="captcha-input" placeholder="请输入验证码(纯数字)"><br>
+        <canvas id="canvas" class="captcha-canvas" width="200" height="72" onclick="dj()"></canvas><br>
+        <button class="captcha-button" onclick="sublim()">提交</button>
+    </div>
+    <script type="text/javascript" src="base64.js"></script>
+    <script>
+        var show_num = [];
+        draw(show_num);
+
+        function dj() {
+            draw(show_num);
+        }
+        var b = new Base64();
+        function sublim() {
+            var val = document.getElementById("text").value;
+            var num = show_num.join("");
+            if (val === '') {
+                alert('请输入验证码！');
+            } else if (val === " ") {
+                //alert('提交成功！');
+                //window.location.href=b.decode("L1F1aWNrQW5zd2VyL1F1aWNrQW5zd2VyL01hdGguaHRtbA==");//M
+                //window.location.href=b.decode("L1F1aWNrQW5zd2VyL1F1aWNrQW5zd2VyL0VuZ2xpc2guaHRtbA==");//E
+                //alert("傻逼");
+                //window.location.href = "./xiaowangtalk/index.html";
+                window.location.href = b.decode("Li9pbmRleC5odG1s");
+                document.getElementById("text").value = '';
+                draw(show_num);
+            } else {
+                alert('验证码错误！请重新输入。');
+                //alert("你不是人？");
+                document.getElementById("text").value = '';
+                draw(show_num);
+            }
+        }
+
+        function draw(show_num) {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            var canvas_width = canvas.width;
+            var canvas_height = canvas.height;
+
+            canvas.width = canvas_width;
+            canvas.height = canvas_height;
+
+            var sCode = "1,2,3,4,5,6,7,8,9,0";
+            var aCode = sCode.split(",");
+            var aLength = aCode.length;
+
+            context.clearRect(0, 0, canvas_width, canvas_height);
+
+            for (var i = 0; i < 4; i++) {
+                var j = Math.floor(Math.random() * aLength);
+                var deg = Math.random() * 30 * Math.PI / 180;
+                var txt = aCode[j];
+                show_num[i] = txt;
+                var x = 20 + i * 45;
+                var y = 40 + Math.random() * 8;
+                context.font = "bold 50px 微软雅黑";
+
+                context.save();
+                context.translate(x, y);
+                context.rotate(deg);
+                context.fillStyle = randomColor();
+                context.fillText(txt, 0, 0);
+                context.restore();
+            }
+
+            for (var i = 0; i < 200; i++) {
+                context.strokeStyle = randomColor();
+                context.beginPath();
+                context.moveTo(Math.random() * canvas_width, Math.random() * canvas_height);
+                context.lineTo(Math.random() * canvas_width, Math.random() * canvas_height);
+                context.stroke();
+            }
+
+            for (var i = 0; i < 5000; i++) {
+                context.strokeStyle = randomColor();
+                context.beginPath();
+                var x = Math.random() * canvas_width;
+                var y = Math.random() * canvas_height;
+                context.moveTo(x, y);
+                context.lineTo(x + 1, y + 1);
+                context.stroke();
+            }
+        }
+
+        function randomColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return "rgb(" + r + "," + g + "," + b + ")";
+        }
+    </script>
+</body>
+</html>
+</article>
+</section>
+        
+<aside id="sidebar">
+
+
+
+
+
+
+
+
+
+
+
+</aside>
+
+</div>
+<footer id="footer">
+
+<div class="outer">
+<div id="footer-info" class="inner">
+
+&copy; 2024 Xiaowangfly<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+</div>
+</div>
+</footer>
+
+</div>
+<nav id="mobile-nav">
+
+<a href="/" class="mobile-nav-link">Home</a>
+
+<a href="/archives" class="mobile-nav-link">Archives</a>
+
+</nav>
+
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+</html>
