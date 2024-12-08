@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Base64 转换器</title>
+    <link href="/2024/12/01/base64-converter/"/>
+    <url>/2024/12/01/base64-converter/</url>
+    
+    <content type="html"><![CDATA[<div id="base64-container">  <h2>Base64 编码和解码工具</h2>  <textarea id="inputText" placeholder="输入文本进行编码/解码"></textarea>  <br>  <button onclick="encodeText()">编码为 Base64</button>  <button onclick="decodeText()">解码为原始文本</button>  <br>  <textarea id="outputText" placeholder="结果显示区" readonly></textarea></div><script>   //Created by chatgpt  // 编码函数  function encodeText() {    var inputText = document.getElementById("inputText").value;    var encoded = btoa(inputText);    document.getElementById("outputText").value = encoded;  }  // 解码函数  function decodeText() {    var inputText = document.getElementById("inputText").value;    try {      var decoded = atob(inputText);      document.getElementById("outputText").value = decoded;    } catch (e) {      document.getElementById("outputText").value = "无效的 Base64 输入";    }  }</script><style>  #base64-container {    width: 100%;    max-width: 600px;    margin: 0 auto;    padding: 20px;    border: 1px solid #ddd;    border-radius: 10px;    text-align: center;  }  textarea {    width: 100%;    height: 100px;    margin-bottom: 10px;    padding: 10px;    border-radius: 5px;    border: 1px solid #ddd;  }  button {    padding: 10px 20px;    margin: 5px;    cursor: pointer;    background-color: #4CAF50;    color: white;    border: none;    border-radius: 5px;  }  button:hover {    background-color: #45a049;  }</style>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>test</title>
     <link href="/2024/11/17/test/"/>
     <url>/2024/11/17/test/</url>
