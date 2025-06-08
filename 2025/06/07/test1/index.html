@@ -27,9 +27,8 @@
 <meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-07T05:15:47.000Z">
-<meta property="article:modified_time" content="2025-06-07T05:23:07.446Z">
+<meta property="article:modified_time" content="2025-06-08T11:21:21.556Z">
 <meta property="article:author" content="XiaowangFly">
-<meta property="article:tag" content="encryptAsDiary">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -264,7 +263,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6 字
+          22 字
         
       </span>
     
@@ -326,7 +325,7 @@
             
               
               <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误" data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="7617739fce6c7200aec94870644f86cb1019e5844a733faceeb24b6ba6799862">e4c850e6bc4605e9acbefbbb2d4d4a908356dff684cd780a5017632f9d642cefe821376149972c8cc15fa4e6e2b782285d62979cb3b2bae8bbfbdbdb8a217b39</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="2fe5f69a9add01adac70b6f2f3ac86d2f83eef54a7c8fbbbfd211f1780997089">e4c850e6bc4605e9acbefbbb2d4d4a908356dff684cd780a5017632f9d642cefe821376149972c8cc15fa4e6e2b782288efc102265b1a0bc01483684879031ede0e97637ae78b2c3db9006796332591c4b2ea53362a00d7efa9fd6de526d0f6234167de9e59c568b54bd31a214eaea176fbf069e7d97f9205179904d49ae09282eb1b1911abbbe40bad815db3cafa3310a4c0d660d3719ff2fc2986ed5c36b87</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -345,13 +344,6 @@
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/encryptAsDiary/" class="print-no-link">#encryptAsDiary</a>
-      
-    </div>
   
 </div>
 
@@ -406,12 +398,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2025/06/08/%E4%B8%80%E4%B8%AA%E7%BA%A7%E6%95%B0%E9%97%AE%E9%A2%98/" title="一个级数问题">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">一个级数问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/24/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2025/01/29/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98/" title="约瑟夫问题">
+                        <span class="hidden-mobile">约瑟夫问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -468,6 +466,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -703,6 +707,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

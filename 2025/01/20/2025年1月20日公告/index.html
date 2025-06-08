@@ -325,23 +325,24 @@
             
               <div class="markdown-body">
                 
-                <h2 id="更新内容"><a href="#更新内容" class="headerlink" title="更新内容"></a>更新内容</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><div style="font-size=20px";>
+                <h2 id="更新内容">更新内容</h2>
+<h3 id="下载">下载</h3>
+<div style="font-size=20px";>
 我将在1月23日之后更新“下载”区内容，将之前的virus迁移到下载中
 </div>
-
-<h3 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h3><div style="font-size=20px";>
+<h3 id="博客">博客</h3>
+<div style="font-size=20px";>
 1月23日之后更新原网站所有博客
 </div>
-
-<h3 id="新virus"><a href="#新virus" class="headerlink" title="新virus"></a>新virus</h3><div style="font-size=20px";>
+<h3 id="新virus">新virus</h3>
+<div style="font-size=20px";>
 即将上线一个新virus，将归结到下载内部
 </div>
-
-<h3 id="原网站"><a href="#原网站" class="headerlink" title="原网站"></a>原网站</h3><div style="font-size=20px";>
+<h3 id="原网站">原网站</h3>
+<div style="font-size=20px";>
 原网站停止更新，但不会删除
 </div>
-
-<p> <a target="_blank" rel="noopener" href="https://xiaowangflyg.github.io/html/">返回旧网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://xiaowangflyg.github.io/html/">返回旧网站</a></p>
 
                 
               </div>
@@ -472,6 +473,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -690,6 +697,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
