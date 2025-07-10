@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/xiaowang.png">
+  <link rel="icon" href="/img/xiaowang.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="XiaowangFly">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="ArduinoBadApple教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArduinoBadApple教程">
+<meta property="og:url" content="http://xiaowangfly.github.io/2025/07/09/ArduinoBadApple%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="XiaowangFly&#39;s Website">
+<meta property="og:description" content="ArduinoBadApple教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-07-09T11:56:15.000Z">
+<meta property="article:modified_time" content="2025-07-10T03:46:20.654Z">
+<meta property="article:author" content="XiaowangFly">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>ArduinoBadApple教程 - XiaowangFly&#39;s Website</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"xiaowangfly.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>小王Fly</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/download/" target="_self">
+                <i class="iconfont icon-briefcase"></i>
+                <span>下载</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/bilibili/" target="_self">
+                <i class="iconfont icon-bilibili"></i>
+                <span>哔哩哔哩</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/Background.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="ArduinoBadApple教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-07-09 19:56" pubdate>
+          2025年7月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          26 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">ArduinoBadApple教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="问题描述">问题描述</h3>
+<p>你可能不知道我在2024年2月13日8点发布的OledBadApple视频，我在备注中说过不会开源，但我今天会直接教你<br>
+<br>首先我们都知道视频中的Oled分辨率为128×64像素，我们通过二进制来控制Oled来让这8192个像素点亮灭，进而组成图像<br>
+<br>那我们怎么实现呢？</p>
+<h3 id="解决方式（教程）">解决方式（教程）</h3>
+<h4 id="了解原理">了解原理</h4>
+<p>我们绘制oled上的点，让计算机和ESP32理解我们的要求，就需要用到0,1，其中0是灭，1是亮<br>
+<br><br>
+根据二进制的法则，每8个0和1就用0b+2进制字符，然后用逗号隔开，继续<br>
+<br>示例（全灭）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><code class="hljs 二进制数据">0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,<br>0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000,0b00000000<br></code></pre></td></tr></table></figure>
+<p>在此之后，我们逐渐利用1表示亮，上方是每两行为实际oled一行，之后继续往下排，换行即可。<br>
+<br>我们了解了原理，接下来开始实践</p>
+<h4 id="实践">实践</h4>
+<p>我们用格式工厂将BadApple逐帧导出（不会的看我以前发过的CmdBadApple）<br>
+<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1V84y1k7ve/">往期视频:CmdBadApple教程</a><br>
+之后用Asgen将其转化为0，1，之后我们编写一个将他们合并并8个一组的程序<br>
+<br>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs 易语言代码">.版本 2<br>.支持库 EThread<br>.支持库 spec<br><br>.程序集 窗口程序集_启动窗口<br>.程序集变量 i, 整数型<br>.程序集变量 n, 整数型<br>.程序集变量 结果, 文本型<br><br>.子程序 __启动窗口_创建完毕<br><br>启动线程 (&amp;子程序1, , )<br><br>.子程序 子程序1<br>.局部变量 FileName, 文本型<br>.局部变量 a, 整数型<br><br>FileName ＝ 取运行目录 () ＋ “\Data13.txt”<br>a ＝ 2401<br>写到文件 (FileName, 到字节集 (“”))<br>.变量循环首 (a, 2428, 1, n)<br>    结果 ＝ “”<br>    .变量循环首 (1, 取文本长度 (子文本替换 (到文本 (读入文件 (取运行目录 () ＋ “\Image\ASCII-Image” ＋ 到文本 (n) ＋ “.txt”)), #换行符, “”, , , 真)), 8, i)<br>        结果 ＝ 结果 ＋ “0B” ＋ 取文本中间 (子文本替换 (到文本 (读入文件 (取运行目录 () ＋ “\Image\ASCII-Image” ＋ 到文本 (n) ＋ “.txt”)), #换行符, “”, , , 真), i, 8) ＋ “,”<br>    .变量循环尾 ()<br>    写到文件 (FileName, 读入文件 (FileName) ＋ 到字节集 (“static const unsigned char PROGMEM pic”) ＋ 到字节集 (到文本 (n)) ＋ 到字节集 (“[] = &#123;”) ＋ 到字节集 (取文本左边 (结果, 取文本长度 (结果) － 1)) ＋ 到字节集 (“&#125;;” ＋ #换行符))<br>    调试输出 (n)<br>.变量循环尾 ()<br>信息框 (“OK”, 48, “OK”, )<br><br><br></code></pre></td></tr></table></figure>
+<p>这段代码中的变量a是为了缓解程序卡顿而设定的下界，尽量让程序每转400个就休息一次，我通过程序导出了13个包含二进制的文档，之后我们做显示的输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs 易语言代码">.版本 2<br><br>.程序集 窗口程序集_启动窗口<br>.程序集变量 n, 整数型<br><br>.子程序 __启动窗口_创建完毕<br><br>.变量循环首 (2001, 2428, 1, n)<br>    编辑框1.加入文本 (#h ＋ 到文本 (n) ＋ #w ＋ #换行符)<br>.变量循环尾 ()<br><br></code></pre></td></tr></table></figure>
+<p>其中2001是上界，2428是总数，还是老话，400个换一次<br>
+之后我们编写Arduino程序</p>
+<h4 id="Arduino程序">Arduino程序</h4>
+<p>我们需要引入一个Adafruit库，具体可通过Arduino的库管理下载</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs Arduino"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;Wire.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;Adafruit_SSD1306.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;Adafruit_GFX.h&gt;</span></span><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> OLED_RESET     4</span><br><span class="hljs-function">Adafruit_SSD1306 <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-number">128</span>, <span class="hljs-number">64</span>, &amp;<span class="hljs-built_in">Wire</span>, OLED_RESET)</span></span>;<br></code></pre></td></tr></table></figure>
+<p>我们通过这段命令初始化oled，之后我们导入二进制数据</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Arduino"><span class="hljs-type">static</span> <span class="hljs-type">const</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">char</span> PROGMEM pic920[] = &#123;<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11011111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B01110111</span>,<span class="hljs-number">0B11110111</span>,<span class="hljs-number">0B01111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11001110</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B01111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00110001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111110</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111110</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00011110</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111100</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00011001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11100111</span>,<span class="hljs-number">0B11000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111111</span>,<span class="hljs-number">0B10000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00011111</span>,<span class="hljs-number">0B11000001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B00001011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11110011</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000110</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11110010</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11100110</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00001100</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B11001000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B10011000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00100000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00001101</span>,<span class="hljs-number">0B10011000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00010000</span>,<span class="hljs-number">0B01111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00110000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111000</span>,<span class="hljs-number">0B00111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00110000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111100</span>,<span class="hljs-number">0B00011111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B00100000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00111110</span>,<span class="hljs-number">0B00001111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B01100000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00011111</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00011111</span>,<span class="hljs-number">0B11100001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00011111</span>,<span class="hljs-number">0B11110000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00001111</span>,<span class="hljs-number">0B11111110</span>,<span class="hljs-number">0B01111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00001111</span>,<span class="hljs-number">0B11111110</span>,<span class="hljs-number">0B01111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111110</span>,<span class="hljs-number">0B01111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000001</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000011</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B00000000</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B11111111</span>,<span class="hljs-number">0B10000000</span>,<span class="hljs-number">0B00000000</span>&#125;;<br></code></pre></td></tr></table></figure>
+<p>这是我导入的其中一段，其中pic920是第920个图片，通过我的易语言生成程序可以得到这2428个pic数组<br>
+<br>因为2428个显示屏数据太多了，ESP32无法处理，所以我们分3个文件储存，每个储存1000个pic，最后一个存储428个<br>
+<br>那我们怎么显示图像呢？</p>
+<h4 id="Arduino程序加载二进制数据">Arduino程序加载二进制数据</h4>
+<p>我们在void setup()区先对oled进行初始化，即</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs Arduino"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>&#123;<br>  <span class="hljs-comment">// put your setup code here, to run once:</span><br>  display.<span class="hljs-built_in">begin</span>(SSD1306_SWITCHCAPVCC, <span class="hljs-number">0x3C</span>);<br>  display.<span class="hljs-built_in">setTextColor</span>(WHITE);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>再定义一帧的毫秒（我定的90，83也就是$ \dfrac{1}{12} $存在一定误差，再一个看着更顺眼（bushi））<br>
+<br>之后我们渲染，你可以放到setup里，也可以放到loop里，区别就是第一个不循环，第二个循环</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Arduino">display.<span class="hljs-built_in">clearDisplay</span>();<br>   display.<span class="hljs-built_in">drawBitmap</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, pic1, <span class="hljs-number">128</span>, <span class="hljs-number">64</span>, <span class="hljs-number">1</span>); <br> display.<span class="hljs-built_in">display</span>();<br> <span class="hljs-built_in">delay</span>(zhen);<br></code></pre></td></tr></table></figure>
+<p>我们通过这段代码先清屏，再加载数据，渲染，延时1帧，渲染下一个图像，依次类推。<br>
+<br>成品需要请私聊我，我会提供</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%99%E7%A8%8B/" class="category-chain-item">教程</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>ArduinoBadApple教程</div>
+      <div>http://xiaowangfly.github.io/2025/07/09/ArduinoBadApple教程/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>XiaowangFly</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年7月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/06/08/%E4%B8%80%E4%B8%AA%E7%BA%A7%E6%95%B0%E9%97%AE%E9%A2%98/" title="一个级数问题">
+                        <span class="hidden-mobile">一个级数问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
